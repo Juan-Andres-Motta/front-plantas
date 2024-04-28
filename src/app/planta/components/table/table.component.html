@@ -1,0 +1,73 @@
+<div class="mt-10">
+  <table
+    class="w-2/3 text-left border border-separate rounded border-slate-200"
+    cellspacing="0"
+  >
+    <tbody>
+      <tr>
+        <th
+          scope="col"
+          class="hidden h-12 px-6 text-sm font-black border-l sm:table-cell first:border-l-0 stroke-slate-700 text-slate-700 bg-lime-100"
+        >
+          #
+        </th>
+        <th
+          scope="col"
+          class="hidden h-12 px-6 text-sm border-l font-balck sm:table-cell first:border-l-0 stroke-slate-700 text-slate-700 bg-lime-100"
+        >
+          Nombre común
+        </th>
+        <th
+          scope="col"
+          class="hidden h-12 px-6 text-sm border-l font-balck sm:table-cell first:border-l-0 stroke-slate-700 text-slate-700 bg-lime-100"
+        >
+          Tipo
+        </th>
+        <th
+          scope="col"
+          class="hidden h-12 px-6 text-sm border-l font-balck sm:table-cell first:border-l-0 stroke-slate-700 text-slate-700 bg-lime-100"
+        >
+          Clima
+        </th>
+      </tr>
+      @for (plant of plants; track $index) {
+      <tr
+        class="block border-b sm:table-row last:border-b-0 border-slate-200 sm:border-none"
+      >
+        <td
+          data-th="id"
+          class="before:w-24 before:inline-block before:font-medium before:text-slate-700 before:content-[attr(data-th)':'] sm:before:content-none flex items-center sm:table-cell h-12 px-6 text-sm transition duration-300 sm:border-t sm:border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500"
+        >
+          {{ plant.id }}
+        </td>
+        <td
+          data-th="nombre_comun"
+          class="before:w-24 before:inline-block before:font-medium before:text-slate-700 before:content-[attr(data-th)':'] sm:before:content-none flex items-center sm:table-cell h-12 px-6 text-sm transition duration-300 sm:border-t sm:border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500"
+        >
+          {{ plant.nombre_comun }}
+        </td>
+        <td
+          data-th="tipo"
+          class="before:w-24 before:inline-block before:font-medium before:text-slate-700 before:content-[attr(data-th)':'] sm:before:content-none flex items-center sm:table-cell h-12 px-6 text-sm transition duration-300 sm:border-t sm:border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500"
+        >
+          {{ plant.tipo }}
+        </td>
+        <td
+          data-th="clima"
+          class="before:w-24 before:inline-block before:font-medium before:text-slate-700 before:content-[attr(data-th)':'] sm:before:content-none flex items-center sm:table-cell h-12 px-6 text-sm transition duration-300 sm:border-t sm:border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500"
+        >
+          {{ plant.clima }}
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <div class="text-xl mt-7">
+    <span class="font-semibold">Total de plantas de exterior:</span
+    ><span class="ml-2">{{ inside_plants.length }}</span>
+  </div>
+  <div class="mt-5 text-xl">
+    <span class="font-semibold">Total de plantas de interior:</span
+    ><span class="ml-2">{{ outside_plants.length }}</span>
+  </div>
+</div>
